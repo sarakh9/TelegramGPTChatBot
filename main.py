@@ -1,8 +1,8 @@
-from typing import Final
+from .apiKey import TOKEN, BOT_USERNAME
 from telegram import Update
 from telegram.ext import Application, CommandHandler, filters, ContextTypes, MessageHandler
-TOKEN: Final = '6858031921:AAFgvORI9jFcYWT8j1vBvpot5seYE5hOfJk'
-BOT_USERNAME :Final = '@gptchatbotbotbot'
+# TOKEN: Final = 'api key token'
+# BOT_USERNAME :Final = '@username'
 
 # Commands
 
