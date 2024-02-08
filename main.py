@@ -1,6 +1,6 @@
 from typing import Final
 from telegram import Update
-from telegram.ext import Applications, CommandHandler, filters, ContextTypes
+from telegram.ext import Application, CommandHandler, filters, ContextTypes
 TOKEN: Final = '6858031921:AAFgvORI9jFcYWT8j1vBvpot5seYE5hOfJk'
 BOT_USERNAME :Final = '@gptchatbotbotbot'
 
@@ -45,7 +45,7 @@ async def handleError(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
 if __name__ == "__main__":
     print("Starting Bot...")
-    app = Applications.builder().token(TOKEN).build()
+    app = Application.builder().token(TOKEN).build()
 
     #Commands
 
