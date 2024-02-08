@@ -1,6 +1,6 @@
 from typing import Final
 from telegram import Update
-from telegram.ext import Application, CommandHandler, filters, ContextTypes
+from telegram.ext import Application, CommandHandler, filters, ContextTypes, MessageHandler
 TOKEN: Final = '6858031921:AAFgvORI9jFcYWT8j1vBvpot5seYE5hOfJk'
 BOT_USERNAME :Final = '@gptchatbotbotbot'
 
