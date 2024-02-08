@@ -23,7 +23,44 @@ async def costumeCommand(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                     I need to be costumised!
                                     """)
 
-# Responses
+# Response Handler
 
 def handleResponse(text: str) -> str:
     return "I'm not working yet! I'm under develope."
+
+# Message Handler
+
+async def handleMessage(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    chat_type = update.message.chat.type
+    text = update.message.text
+    user = update.message.chat.id
+    response = handleResponse(text)
+    await update.message.reply_text(response)
+
+# Error Handler
+
+async def handleError(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    print(f'Update {update} caused error {context.error}')
+
+
+if __name__ == "__main__":
+    print("Starting Bot...")
+    app = Applications.builder().token(TOKEN).build()
+
+    #Commands
+
+    app.add_handler(CommandHandler('start', startCommand))
+    app.add_handler(CommandHandler('help', helpCommand))
+    app.add_handler(CommandHandler('costume', costumeCommand))
+
+    # Message
+
+    app.add_handler(MessageHandler(filters.TEXT, handleMessage))
+
+    # Error
+
+    app.add_error_handler(handleError)
+
+    # Polling
+    print("Polling...")
+    app.run_polling(poll_interval=3)
