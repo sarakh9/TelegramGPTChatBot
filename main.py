@@ -22,3 +22,8 @@ async def costumeCommand(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("""Hi!
                                     I need to be costumised!
                                     """)
+
+# Responses
+
+def handleResponse(text: str) -> str:
+    return "I'm not working yet! I'm under develope."
