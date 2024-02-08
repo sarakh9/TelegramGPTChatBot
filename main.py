@@ -18,7 +18,7 @@ async def helpCommand(update: Update, context: ContextTypes.DEFAULT_TYPE):
                                     If you need /help hit help command.
                                     """)
 
-async def costumeCommand(update: Update, context: ContextTypes.DEFAULT_TYPE):
+async def costumCommand(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("""Hi!
                                     I need to be costumised!
                                     """)
@@ -51,7 +51,7 @@ if __name__ == "__main__":
 
     app.add_handler(CommandHandler('start', startCommand))
     app.add_handler(CommandHandler('help', helpCommand))
-    app.add_handler(CommandHandler('costume', costumeCommand))
+    app.add_handler(CommandHandler('costum', costumCommand))
 
     # Message
 
